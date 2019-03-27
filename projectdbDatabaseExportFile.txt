@@ -1,0 +1,100 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 23, 2018 at 07:51 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `projectdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movietable`
+--
+
+CREATE TABLE `movietable` (
+  `year` varchar(4) DEFAULT NULL,
+  `name` varchar(50) NOT NULL,
+  `genre` varchar(100) NOT NULL,
+  `director` varchar(100) DEFAULT NULL,
+  `cast` varchar(200) NOT NULL,
+  `rating` float DEFAULT NULL,
+  `comment` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `movietable`
+--
+
+INSERT INTO `movietable` (`year`, `name`, `genre`, `director`, `cast`, `rating`, `comment`) VALUES
+('1942', 'Casablanca', 'Drama, War', 'Michael Curtiz', 'Humphrey Bogart, Ingrid Bergman', NULL, NULL),
+('1939', 'Gone With The Wind', 'Drama, War', 'Victor Fleming', 'Clark Gable, Vivien Leigh', NULL, NULL),
+('1991', 'Goopy Bagha Phire Elo', 'Family, Fantasy', 'Sandip Ray', 'Rabi Ghosh, Tapan Chatterjee', NULL, NULL),
+('1969', 'Goopy Gyne Bagha Byne', 'Adventure, Family, Comedy', 'Satyajit Roy', 'Rabi Ghosh, Tapan Chatterjee', NULL, NULL),
+('1980', 'Hirok Rajar Deshe', 'Rabi Ghosh, Tapan Chatterjee', 'Satyajit Roy', 'Rabi Ghosh, Tapan Chatterjee, Soumitra Chatterjee', NULL, NULL),
+('1960', 'Psycho', 'Mystery, Thriller', 'Alfred Hitchcock', 'Anthony Perkins, Janet Leigh', NULL, NULL),
+('1988', 'Rain Man', 'Drama, Biopic', 'Barry Levinson', 'Dustin Huffman, Tom Cruise', NULL, NULL),
+('1954', 'Rear Window', 'Mystery, Thriller', 'Alfred Hitchcock', 'James Stewert, Grace Kelly', NULL, NULL),
+('1974', 'The Golden Fortress', 'Adventure, Family', 'Satyajit Roy', 'Soumitra Chatterjee, Santanu Bagchi, Ajoy Banerjee', NULL, NULL),
+('1958', 'Vertigo', 'Mystery, Thriller', 'Alfred Hitchcock', 'James Stewart, Kim Novak, Barbara Bel Geddes', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registertable`
+--
+
+CREATE TABLE `registertable` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registertable`
+--
+
+INSERT INTO `registertable` (`username`, `password`, `email`) VALUES
+('drogon', '1234', 'drogon@gmail.com'),
+('farial', '123', 'farial@gmai'),
+('hodor', '123', 'hodor@gmail'),
+('newuser', '123', 'newuser@gmail'),
+('sanjana', '123', 'sanjana@gmail');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `movietable`
+--
+ALTER TABLE `movietable`
+  ADD PRIMARY KEY (`name`);
+
+--
+-- Indexes for table `registertable`
+--
+ALTER TABLE `registertable`
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
